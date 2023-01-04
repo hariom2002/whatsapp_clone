@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/common/widgets/error.dart';
 import 'package:whatsapp_clone/features/auth/screens/otp_screen.dart';
+import 'package:whatsapp_clone/features/auth/screens/user_information_screen.dart';
 
 import 'features/auth/screens/login_screen.dart';
 
@@ -17,6 +18,11 @@ Route<dynamic> generateRoute(RouteSettings settings) {
         builder: (context) => OPTScreen(
           verificationId: verificationId,
         ),
+      );
+    case UserInformationScreen.routeName:
+      final String verificationId = settings.arguments as String;
+      return MaterialPageRoute(
+        builder: (context) => const UserInformationScreen(),
       );
     default:
       return MaterialPageRoute(
