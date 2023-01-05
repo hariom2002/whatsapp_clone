@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/common/widgets/error.dart';
 import 'package:whatsapp_clone/features/auth/screens/otp_screen.dart';
 import 'package:whatsapp_clone/features/auth/screens/user_information_screen.dart';
-
+import '';
 import 'features/auth/screens/login_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
@@ -20,10 +20,11 @@ Route<dynamic> generateRoute(RouteSettings settings) {
         ),
       );
     case UserInformationScreen.routeName:
-      final String verificationId = settings.arguments as String;
+      final String verificationId = settings.arguments.toString();
       return MaterialPageRoute(
         builder: (context) => const UserInformationScreen(),
       );
+
     default:
       return MaterialPageRoute(
           builder: (context) => const Scaffold(
